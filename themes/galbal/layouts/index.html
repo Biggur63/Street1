@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <h2>{{.Title}}</h2>
+    {{ with .Params.Subtitle }}
+    <h3>{{ . }}</h3>
+    {{ end }}
+    <div class="homepage-content">
+    {{.Content}}
+    </div>
+    {{/*  <div>
+    {{ range first 10 .Site.RegularPages }}
+        {{ .Render "summary"}}
+    {{ end }}
+    </div>  */}}
+{{ end }}

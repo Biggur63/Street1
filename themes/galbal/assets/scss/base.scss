@@ -1,0 +1,83 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-width: 375px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--dark);
+    font-family: var(--font-family-main);
+    font-weight: 300;
+    line-height: 1.45em;
+    color: var(--white);
+    
+    @media screen and (max-width: 520px) {
+        font-size: calc(var(--font-size) - 3px);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1em;
+    margin-block: .6em;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+h1 {
+    font-family: var(--font-family-headers);
+    font-size: clamp(24px, calc(18px + 2vw), 2.8rem);
+    font-weight: 200;
+}
+
+h2 {
+    font-family: var(--font-family-headers);
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: .9rem;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 250ms;
+}
+
+a:hover {
+    color: var(--main)    
+}
+
+a.active {
+    color: var(--white);
+}
+
+::selection {
+    background: var(--main);
+    text-shadow: none;
+    color: #fff;
+}
+
+.content {
+
+}

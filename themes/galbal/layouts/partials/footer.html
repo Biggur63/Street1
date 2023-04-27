@@ -1,0 +1,24 @@
+<footer class="footer">
+    <div class="footer__contacts">
+        {{ with .Site.Params.Contacts.Phone }}
+        <a href="tel:{{ .Link }}">{{ .Show }}</a><br>
+        {{ end }}
+        {{ with .Site.Params.Contacts.Email }}
+        <a href="mailto:{{ . }}">{{ . }}</a>
+        {{ end }}
+    </div>
+    <div class="footer__copyright">
+        {{ with .Site.Params.Copyright }}
+            {{ . }} <br>
+        {{ end }}
+        {{ with .Site.Params.Author }}
+            © {{ dateFormat "2006" now }}, {{ . }}.<br>
+        {{ end }}
+        {{ if not .Site.Params.DontShowSource}}
+        Made with
+        <a target="_blank" class="source-love" href="https://github.com/Kolya-YA">
+            love and passion
+        </a>
+        {{ end }}
+    </div>
+</footer>

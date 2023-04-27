@@ -1,0 +1,31 @@
+baseURL: https://street.gurfoto.ru/ # Site url.
+title: пешком по городу # Site name.
+defaultContentLanguage: 'ru'
+theme: galbal
+googleAnalytics: '' # Google analytics id (disabled)
+
+disableKinds:
+  - "RSS"
+  - "taxonomy"
+  - "taxonomyTerm"
+
+params:
+  copyright: # todo: set your copyright type.
+  author: GurFoto.Ru, Юрий Гуревич # todo: set your full name.
+  contacts:
+    email: kinza.rostov@gmail.com
+    phone:
+      show: +7 919 874 20 24 # Please fill both field of phone contacts
+      link: +79198742024 # Please fill both field of phone contacts
+  showDevInfo: true # Show/hide order No and qty of photos
+  
+  disableWelcomePageBackground: false # disables the background image on the homepage
+  plausible: '' # todo: set your plausible id. (Analytics https://plausible.io/)
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+permalinks:
+  home: ":filename/"

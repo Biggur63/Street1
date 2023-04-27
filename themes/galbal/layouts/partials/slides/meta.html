@@ -1,0 +1,18 @@
+<div class="center">
+    <div class="slide-meta columns is-mobile">
+        {{ if .Params.Date }}
+            <div class="center column slide-meta-el grey">
+                {{ .Page.Date | time.Format ":date_long" }}
+            </div>
+        {{ else }}
+            {{ $img := resources.Get .Params.image }}
+            {{ with $img.Exif }}
+                {{ with .Date }}
+                    <div class="center column slide-meta-el grey">
+                        {{ . | time.Format ":date_long" }}
+                    </div>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>
+</div>

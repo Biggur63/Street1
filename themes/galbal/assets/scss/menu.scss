@@ -1,0 +1,24 @@
+.menu {
+    margin-block: 0;
+    margin-inline: auto;
+    padding: 0;
+    display: flex;
+    list-style: none;   
+    font-size: var(--font-size);
+    text-transform: uppercase;
+}
+
+.menu__item:not(:last-child)::after {
+    content: "/";
+    margin-inline-end: .1em;
+}
+
+.menu__link {
+    display: inline-block;
+    padding: .5vw;
+    padding-block-end: .3vw;
+
+    &.is-active {
+        border-bottom: 4px solid var(--main);
+    }
+}

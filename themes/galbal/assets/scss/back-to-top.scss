@@ -1,0 +1,18 @@
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 4vw;
+    display: block;
+    visibility: hidden;
+    background-color: var(--main-tr);
+    border-radius: 15%;
+    padding: .7rem;
+    font-size: 1.8em;
+    transition: color, background-color 500ms;
+
+    &:hover {
+        background-color: var(--white);
+        background-color: var(--grey);
+        color: var(--dark);
+    }
+  }

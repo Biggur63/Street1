@@ -1,0 +1,48 @@
+
+.navbar {
+    display: grid;
+    column-gap: var(--block-gap);
+    row-gap: calc(var(--block-gap) / 2);
+    grid-template-columns: min-content 1fr;
+    grid-template-areas: 
+    "logo title"
+    "logo menu";
+    align-items: center;
+    margin-inline: 2vw;
+    
+    @media screen and (max-width: 520px) {
+        grid-template-areas: 
+            "logo title"
+            "menu menu";
+        
+    }
+
+    &__logo {
+        grid-area: logo;
+        width: clamp(69px, 10vw, 92px);
+        height: clamp(69px, 10vw, 92px) ;
+        
+        &-link {
+            display: block;
+        }
+        
+        &-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__title {
+        grid-area: title;
+        text-align: center;
+        
+        & > h1 {
+            margin: 0;
+        }
+    }
+
+    &__menu {
+        grid-area: menu;
+    }
+}

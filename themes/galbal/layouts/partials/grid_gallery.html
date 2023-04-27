@@ -1,0 +1,48 @@
+<ul class="gallery">
+{{ range sort .Pages.ByWeight }}
+    {{ $imgSrc := resources.Get .Params.image }}
+    {{ $img := $imgSrc.Fit "320x2000 webp q75" }}
+    {{ $imgFull := $imgSrc.Fit "2000x2000 webp q80" }}
+    {{ $vert := gt $img.Height $img.Width }}
+    <li class="gallery__item{{ if $vert }} gallery__item--vert {{ end }}">
+        <a href="{{ .Permalink }}"
+            class="gallery__link"
+            data-pswp-src="{{ $imgFull.RelPermalink }}"
+            data-pswp-width="{{ $imgFull.Width }}"
+            data-pswp-height="{{ $imgFull.Height }}"
+            >
+            <img
+            src="{{ $img.RelPermalink }}"
+            loading="lazy"
+            width="{{ $img.Width }}"
+            height="{{ $img.Height }}"
+            alt="photo thumbnail"
+            />
+        </a>
+        {{ if .Site.Params.ShowDevInfo }}
+        <div class="gallery__item-weigth">
+            {{ . }}<br>
+            {{ .Params.Weight }}
+        </div>
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
+
+
+{{ define "pageScript" }}
+{{/*  tofix  */}}
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<script  type="module">
+	import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
+	const lightbox = new PhotoSwipeLightbox({
+		gallery: '.gallery',
+		children: '.gallery__link',
+        showHideAnimationType: 'zoom',
+        showAnimationDuration: 333,
+        hideAnimationDuration: 333,
+		pswpModule: () => import('/photoswipe/photoswipe.esm.js')
+	});
+	lightbox.init();
+</script>
+{{ end }}

@@ -1,0 +1,38 @@
+.content {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-inline: var(--block-gap);
+    
+    strong {
+        color: var(--main);
+    }
+    
+    a strong {
+        border-bottom: 2px solid #e7e7e7;
+    }
+    
+    p code,
+    strong code {
+        color: var(--main);
+        background-color: transparent;
+        font-size: 1.1em;
+        font-weight: 600;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    }
+    
+    blockquote {
+        margin-left: 1rem;
+        border-left: 3px solid;
+        border-color: var(--main);
+        padding-left: 20px;
+    }
+    
+    blockquote p {
+        color: var(--white);
+    }
+
+    img {
+        width: 100%;
+    }
+}

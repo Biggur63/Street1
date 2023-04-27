@@ -1,0 +1,15 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title itemprop="name">{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+	{{ partial "meta" . }}
+	<link rel="icon" type="image/png" href={{ "logo.png" | absURL }}>
+	{{- $options := dict
+		"outputStyle" "compressed"
+		"enableSourceMap" (not hugo.IsProduction)
+	}}
+	{{- $style := resources.Get "scss/main.scss" | toCSS $options }}
+	{{- $style = $style | fingerprint }}
+	<link rel="stylesheet" href={{ $style.RelPermalink }}>
+	{{- partial "helpers/plausible" . }}
+</head>

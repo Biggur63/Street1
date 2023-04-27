@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section>
+	{{ if .Title | or .Params.Subtitle | or .Content | or .Site.Params.ShowDevInfo }}
+	<div class="description">
+		<div class="description__filler"></div>
+		<article class="description__content">
+			{{ with .Title }}
+			<h2>{{ . }}</h2>
+			{{ end }}
+			{{ with .Params.Subtitle }}
+			<h3>{{ . }}</h3>
+			{{ end }}
+			<div>{{ .Content }}</div>
+			{{ if .Site.Params.ShowDevInfo }}
+			<div><strong>Кол-во: {{ len .Pages }}</strong></div>
+			{{ end }}
+		</article>
+	</div>
+	{{ end }}
+	{{ partial "grid_gallery" . }}
+</section>
+{{ end }}

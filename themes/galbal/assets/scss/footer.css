@@ -1,0 +1,9 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: calc(var(--block-gap) * 3);
+    padding-block: var(--block-gap);
+    padding-inline: calc(var(--block-gap) * 2);
+}

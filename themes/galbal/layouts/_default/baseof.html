@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+{{ partial "head.html" . }}
+<body>
+    {{ partial "header.html" . }}
+    <main aria-role="main" class="content">
+    {{ block "main" . }}
+    {{ end }}
+    </main>
+    {{- partial "back-to-top.html" . }}
+    {{- partial "footer.html" . }}
+    {{- partial "footer-scripts.html" . }}
+    {{ block "pageScript" . }}
+    {{ end }}
+</body>
+</html>

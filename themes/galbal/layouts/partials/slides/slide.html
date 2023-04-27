@@ -1,0 +1,28 @@
+{{ $img := resources.Get .Params.image }}
+{{ $img = $img.Fit "2000x2000 webp q80" }}
+<div class="slide">
+	<div class="slide-imgs">
+		<div {{ if .Params.multipleColumn }} class="columns center" {{ end }}>
+			<img src="{{ $img.RelPermalink }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+		</div>
+	</div>
+
+	<div class="center">
+		<div class="content">
+			{{ if not .Params.hideContent }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			{{ end }}
+			{{ if not .Params.hideMeta }}
+			{{ partial "slides/meta" . }}
+			{{ end }}
+			{{ if not .Params.hideExif }}
+				{{ with $img.Exif }}
+					{{ partial "helpers/exif.html" . }}
+				{{ else }}
+					No EXIF data
+				{{ end }}
+			{{ end }}			
+		</div>
+	</div>
+</div>

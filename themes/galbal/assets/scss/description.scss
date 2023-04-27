@@ -1,0 +1,17 @@
+.description {
+    display: flex;
+    margin-block-end: var(--block-gap);
+
+    &__filler {
+        flex: 1 1 0;
+        max-width: 20ch;
+        background: #ff809910;
+        background: radial-gradient(closest-side, #ff809918 0%, transparent);
+    }
+    
+    &__content {
+        flex: 10 1 75ch;
+        max-width: 75ch;
+        margin-inline: 1vw;
+    }
+}

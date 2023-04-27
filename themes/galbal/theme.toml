@@ -1,0 +1,13 @@
+name = "galbal"
+license = "MIT"
+licenselink = ""
+description = ""
+homepage = ""
+demosite = ""
+tags = ["minimal", "clean", "responsive", "simple", "minimalist", "portfolio"]
+features = ["Multiple Column Usage", "Clean", "Customizable"]
+min_version = "0.111"
+
+[author]
+  name = "Nikolay Kolomyytsev"
+  homepage = "https://github.com/Kolya-YA"

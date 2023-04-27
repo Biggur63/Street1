@@ -1,0 +1,40 @@
+<base href="{{ .Site.BaseURL }}">
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url">
+
+{{- with .Site.Params.CompanyTwitter }}
+<meta name="twitter:site" content="{{ . }}">
+{{- end }}
+
+{{- with .Site.Params.authorTwitter }}
+<meta name="twitter:creator" content="{{ . }}">
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="{{ .Language.Lang }}">
+<meta property="og:title" content="{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}">
+<meta property="og:site_name" content="{{ .Site.Title  }}">
+{{- $description := .Site.Params.description }}
+{{- if .Description }}
+{{- $description = .Description }}
+{{- else if .Summary }}
+{{- $description = .Summary }}
+{{- end }}
+<meta name="description" content="{{ $description }}">
+<meta property="og:description" content="{{ $description }}">
+
+{{/*  todo  */}}
+{{- $img := slice }}
+{{- $scratch := newScratch }}
+{{- if .Params.images }}
+    {{- partial "helpers/get" (dict "scratch" $scratch "row" .Params ) }}
+    {{- $img = $scratch.Get "img" }}
+{{- else if .Site.Params.image }}
+    {{- $row := dict "images" (slice .Site.Params.image) }}
+    {{- partial "helpers/get" (dict "scratch" $scratch "row" $row) }}
+    {{- $img = $scratch.Get "img" }}
+{{- end }}
+{{- with $img }}
+{{- $i := .Fill "800x418 center png" }}
+<meta property="og:image" content="{{ $i.Permalink }}" />
+{{- end -}}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="section">
+	<div class="arrows">
+		{{ with .PrevInSection }}
+		<a class="prev" href="{{.Permalink}}">⇦</a>
+		{{ end }}
+		{{ with .NextInSection }}
+		<a class="next" href="{{.Permalink}}">⇨</a>
+		{{ end }}
+	</div>
+	{{ partial "slides/slide.html" . }}
+</section>
+{{ end }}

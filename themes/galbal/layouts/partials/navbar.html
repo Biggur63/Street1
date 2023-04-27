@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar__logo">
+        <a class="navbar__logo-link" {{ if not .IsHome }} href="/"{{ end }}>
+            <img alt="logo" class="navbar__logo-img" src={{ "/images/logo.png" }}>
+        </a>
+    </div> 
+
+    <div class="navbar__title">
+        <h1>
+            <a{{ if not .IsHome }} href="/"{{ end }}>{{ .Site.Title }}</a>
+        </h1>
+    </div>
+    {{- if and .Site.Menus .Site.Menus.main }}
+    {{- $section := .Site.GetPage .Section }}
+    <ul class="navbar__menu menu">
+        {{ $curPage := . }}
+        {{- range .Site.Menus.main }}
+            <li class="menu__item">
+                <a 
+                    class=" menu__link {{ if $section.IsMenuCurrent "main" . }}is-active{{ end }}"
+                    href="{{ .URL }}">
+                    {{ .Name }}
+                </a>
+            </li>
+        {{- end }}
+    </ul>
+    {{- end }}
+</nav>
