@@ -1,5 +1,5 @@
 baseURL: https://street.gurfoto.ru/ # Site url.
-title: пешком по городу # Site name.
+title: ПЕШКОМ ПО ГОРОДУ # Site name.
 defaultContentLanguage: 'ru'
 theme: galbal
 googleAnalytics: '' # Google analytics id (disabled)
@@ -17,7 +17,7 @@ params:
     phone:
       show: +7 919 874 20 24 # Please fill both field of phone contacts
       link: +79198742024 # Please fill both field of phone contacts
-  showDevInfo: true # Show/hide order No and qty of photos
+  showDevInfo: false # Show/hide order No and qty of photos
   
   disableWelcomePageBackground: false # disables the background image on the homepage
   plausible: '' # todo: set your plausible id. (Analytics https://plausible.io/)
@@ -29,3 +29,4 @@ markup:
 
 permalinks:
   home: ":filename/"
+  

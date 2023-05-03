@@ -3,7 +3,7 @@ title:
 subtitle: 
 menu:
     main:
-        name: prague
+        name: прага
         weight: 20
 ---
 

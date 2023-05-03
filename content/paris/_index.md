@@ -3,7 +3,7 @@ title:
 subtitle:
 menu:
     main:
-        name: paris
+        name: париж
         weight: 30
 ---
 

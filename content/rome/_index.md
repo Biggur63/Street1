@@ -2,7 +2,7 @@
 title:
 menu:
     main:
-        name: rome
+        name: рим
         weight: 40
 ---
 
