@@ -1,4 +1,5 @@
 baseURL: https://street.gurfoto.ru/ # Site url.
+baseURL: / # Site url.
 title: ПЕШКОМ ПО ГОРОДУ # Site name.
 defaultContentLanguage: 'ru'
 theme: galbal
